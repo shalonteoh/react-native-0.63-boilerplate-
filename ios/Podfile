@@ -10,6 +10,8 @@ target 'trackerapp' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+
   target 'trackerappTests' do
     inherit! :complete
     # Pods for testing

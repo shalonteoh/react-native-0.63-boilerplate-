@@ -9,13 +9,21 @@ export const normal = tiny * 3 // 15
 export const medium = normal * 2 // 30
 
 export default {
+    tinyTopMargin: {
+        marginTop: tiny,
+    },
+    tinyBottomMargin: {
+        marginBottom: tiny,
+    },
+    smallBottomMargin: {
+        marginBottom: small,
+    },
     bottomMargin: {
         marginBottom: normal,
     },
     mediumBottomMargin: {
         marginBottom: medium,
     },
-
     tinyVerticalMargin: {
         marginVertical: tiny,
     },
@@ -66,5 +74,8 @@ export default {
     },
     mediumVerticalPadding: {
         paddingVertical: medium,
+    },
+    tinyBorderRadius: {
+        borderRadius: tiny,
     },
 }

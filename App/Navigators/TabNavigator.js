@@ -2,6 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import StackNavigator from "./StackNavigator";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Colors } from 'App/Theme';
+
 export default createBottomTabNavigator({
     Home: {
         screen: StackNavigator,
@@ -14,8 +16,8 @@ export default createBottomTabNavigator({
 }, {
     defaultNavigationOptions: ({ navigation }) => ({
         tabBarOptions: {
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
+            activeTintColor: Colors.activeTint,
+            inactiveTintColor: Colors.inactiveTint,
         },
     })
 });
