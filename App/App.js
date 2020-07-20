@@ -26,6 +26,7 @@ export default class App extends Component {
       /**
        * @see https://github.com/reduxjs/react-redux/blob/master/docs/api/Provider.md
        */
+      // Provider makes the Redux store available to the rest of your app
       <Provider store={store}>
         {/**
          * PersistGate delays the rendering of the app's UI until the persisted state has been retrieved

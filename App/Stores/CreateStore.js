@@ -15,10 +15,13 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 const persistConfig = {
     key: 'root',
+    // Storage Method (React Native)
     storage: AsyncStorage,
-    /**
-     * Blacklist state that we do not need/want to persist
-     */
+    // Whitelist (Save Specific Reducers)
+    whitelist: [
+        // 'authReducer',
+    ],
+    // Blacklist (Don't Save Specific Reducers)
     blacklist: [
         // 'auth',
     ],
@@ -28,20 +31,24 @@ export default (rootReducer, rootSaga) => {
     const middleware = []
     const enhancers = []
 
-    // Connect the sagas to the redux store
+    // Create the saga middleware
     const sagaMiddleware = createSagaMiddleware()
     middleware.push(sagaMiddleware)
-
     enhancers.push(applyMiddleware(...middleware))
 
-    // Redux persist
+    // Middleware: Redux Persist Persisted Reducer
     const persistedReducer = persistReducer(persistConfig, rootReducer)
 
+    // Redux: Store
+    // Connect the sagas to the redux store
     const store = createStore(persistedReducer, compose(...enhancers))
+
+    // Middleware: Redux Persist Persister
     const persistor = persistStore(store)
 
     // Kick off the root saga
     sagaMiddleware.run(rootSaga)
 
+    // Exports
     return { store, persistor }
 }

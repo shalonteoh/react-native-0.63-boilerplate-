@@ -1,8 +1,8 @@
-import { createAppContainer } from "react-navigation";
+import React from 'react';
+import { Button } from 'react-native';
 import HomeScreen from "../Containers/Home/HomeScreen";
 const { createStackNavigator } = require("react-navigation-stack");
-
-const StackNavigator = createStackNavigator({
+export default createStackNavigator({
     HomeScreen: {
         name: 'HomeScreen',
         screen: HomeScreen,
@@ -13,12 +13,15 @@ const StackNavigator = createStackNavigator({
                     duration: 0,
                     timing: 0,
                 },
-            })
+            }),
+            headerLeft: (
+                <Button
+                    onPress={navigation.toggleDrawer}
+                    title="Drawer"
+                    color="#222"
+                />)
         }),
-    },
-
+    }
 }, {
     initialRouteName: 'HomeScreen'
-})
-
-export default createAppContainer(StackNavigator)
+});

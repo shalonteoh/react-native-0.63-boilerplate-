@@ -31,6 +31,7 @@ export const fetchUserFailure = (state, { errorMessage }) => ({
 /**
  * @see https://github.com/infinitered/reduxsauce#createreducer
  */
+// map our action types to our reducer functions
 export const reducer = createReducer(INITIAL_STATE, {
     [ExampleTypes.FETCH_USER_LOADING]: fetchUserLoading,
     [ExampleTypes.FETCH_USER_SUCCESS]: fetchUserSuccess,
