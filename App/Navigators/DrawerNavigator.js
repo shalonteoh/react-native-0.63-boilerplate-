@@ -1,15 +1,28 @@
+import React from 'react';
+import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
-import StackNavigator from './StackNavigator';
+import TabNavigator from './TabNavigator';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default createDrawerNavigator({
+const DrawerNavigator = createDrawerNavigator({
     Home: {
-        name: 'Home',
-        screen: StackNavigator,
+        screen: TabNavigator,
         navigationOptions: ({ navigation }) => ({
             drawerLabel: 'Home',
+            drawerIcon: ({ tintColor }) => (
+                <Icon name="home" size={20} color={tintColor} />
+            ),
         }),
     }
-},
-    {
-        initialRouteName: 'Home',
-    });
+}, {
+    contentOptions: {
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+        itemsContainerStyle: {
+            marginVertical: 30,
+        },
+    }
+});
+
+
+export default createAppContainer(DrawerNavigator)

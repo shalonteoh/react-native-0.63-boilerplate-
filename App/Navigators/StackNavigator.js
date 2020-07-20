@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import HomeScreen from "../Containers/Home/HomeScreen";
-const { createStackNavigator } = require("react-navigation-stack");
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { createStackNavigator } from "react-navigation-stack"
 export default createStackNavigator({
     HomeScreen: {
         name: 'HomeScreen',
@@ -15,11 +16,12 @@ export default createStackNavigator({
                 },
             }),
             headerLeft: (
-                <Button
+                <TouchableOpacity
                     onPress={navigation.toggleDrawer}
-                    title="Drawer"
-                    color="#222"
-                />)
+                    style={{ paddingLeft: 10 }}
+                >
+                    <Icon name="bars" size={20} color="#000" />
+                </TouchableOpacity>)
         }),
     }
 }, {

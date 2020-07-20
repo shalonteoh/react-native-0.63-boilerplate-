@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import NavigationService from 'App/Services/NavigationService'
-import TabNavigator from 'App/Navigators/TabNavigator'
 import { View } from 'react-native'
 import { connect } from 'react-redux'
 import StartupActions from 'App/Stores/Startup/Actions'
 import { PropTypes } from 'prop-types'
 import { Helpers } from 'App/Theme'
+import DrawerNavigator from 'App/Navigators/DrawerNavigator'
 // import AppNavigator from 'App/Navigators/StackNavigator'
+// import TabNavigator from 'App/Navigators/TabNavigator'
 
 class RootScreen extends Component {
     componentDidMount() {
@@ -17,7 +18,7 @@ class RootScreen extends Component {
     render() {
         return (
             <View style={Helpers.fill}>
-                <TabNavigator
+                <DrawerNavigator
                     // Initialize the NavigationService (see https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
                     ref={(navigatorRef) => {
                         NavigationService.setTopLevelNavigator(navigatorRef)
