@@ -46,8 +46,6 @@ Usage of redux sauce:
 
 ### Navigation
 
-Use navigation + stack navigation + masked view + gesture handler
-
 Here are building blocks and shared foundations for navigators (to create the navigation structure in your app)
 
 ```
@@ -77,7 +75,7 @@ Usage of drawer type navigation
     "react-navigation-drawer": "^2.5.0",
 ```
 
-Use lottie
+Use lottie for splash logo animation etc...
 
 ```
     "lottie-ios": "^3.1.3"
