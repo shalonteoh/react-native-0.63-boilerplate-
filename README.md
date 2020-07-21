@@ -85,7 +85,9 @@ Use lottie for splash logo animation etc...
 Authentication tools:
 
 1. Google login (update GoogleService-Info.plist [follow this guide](https://github.com/react-native-community/google-signin/blob/master/docs/get-config-file.md)
+2. Apple login
 
 ```
 "@react-native-community/google-signin": "^4.0.3"
+"@invertase/react-native-apple-authentication": "^1.1.2"
 ```
