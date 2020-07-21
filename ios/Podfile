@@ -11,6 +11,8 @@ target 'trackerapp' do
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+  
+  pod 'GoogleSignIn', '~> 5.0.2'
 
   target 'trackerappTests' do
     inherit! :complete

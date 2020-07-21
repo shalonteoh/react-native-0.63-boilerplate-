@@ -4,8 +4,8 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import TabNavigator from './TabNavigator';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Colors } from 'App/Theme';
-import SettingScreen from '../Containers/Setting/SettingScreen';
 import SettingNavigator from './SettingNavigator';
+import AuthScreen from '../Containers/Auth/AuthScreen';
 
 const DrawerNavigator = createDrawerNavigator({
     Home: {
@@ -25,8 +25,9 @@ const DrawerNavigator = createDrawerNavigator({
                 <Icon name="cog" size={20} color={tintColor} />
             ),
         }),
-    }
+    },
 }, {
+    initialRouteName: 'Home',
     contentOptions: {
         activeTintColor: Colors.activeTint,
         inactiveTintColor: Colors.inactiveTint,

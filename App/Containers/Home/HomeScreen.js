@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { View, Text } from "react-native";
 import { Helpers } from 'App/Theme';
 import styles from './indexStyle';
-
-export default class HomeScreen extends Component {
+import { connect } from 'react-redux'
+class HomeScreen extends Component {
     render() {
+        console.log(this.props.user);
         return (
             <View style={[Helpers.fill, styles.container]}>
                 <View>
@@ -14,3 +15,15 @@ export default class HomeScreen extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    user: state.auth.user,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(HomeScreen)

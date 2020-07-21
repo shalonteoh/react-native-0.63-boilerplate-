@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>56588185033-0bsq02s4o16ik25sv4bgjn4sbn9o0fn9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.56588185033-0bsq02s4o16ik25sv4bgjn4sbn9o0fn9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAB3GcIn1igfjiSCcgu5AOdXYiGDVzcptA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>56588185033</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.shalonteoh.trackerapp</string>
+	<key>PROJECT_ID</key>
+	<string>trackerapp-68f27</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trackerapp-68f27.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:56588185033:ios:729557608f7e71550b4c18</string>
+	<key>DATABASE_URL</key>
+	<string>https://trackerapp-68f27.firebaseio.com</string>
+</dict>
+</plist>

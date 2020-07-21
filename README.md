@@ -81,3 +81,11 @@ Use lottie for splash logo animation etc...
     "lottie-ios": "^3.1.3"
     "lottie-react-native": "^3.4.0"
 ```
+
+Authentication tools:
+
+1. Google login (update GoogleService-Info.plist [follow this guide](https://github.com/react-native-community/google-signin/blob/master/docs/get-config-file.md)
+
+```
+"@react-native-community/google-signin": "^4.0.3"
+```
