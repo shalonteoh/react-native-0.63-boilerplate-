@@ -1,11 +1,11 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import HomeScreen from "../Containers/Home/HomeScreen";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { createStackNavigator } from "react-navigation-stack"
+import HistoryScreen from '../Containers/History/HistoryScreen';
 export default createStackNavigator({
-    HomeScreen: {
-        screen: HomeScreen,
+    HistoryScreen: {
+        screen: HistoryScreen,
         navigationOptions: ({ navigation }) => ({
             title: '',
             animationEnabled: false,
@@ -25,5 +25,5 @@ export default createStackNavigator({
         }),
     },
 }, {
-    initialRouteName: 'HomeScreen'
+    initialRouteName: 'HistoryScreen'
 });
