@@ -84,4 +84,7 @@ export default {
     tinyBottomRightBorderRadius: {
         borderBottomRightRadius: tiny,
     },
+    smallLeftMargin: {
+        paddingLeft: small
+    },
 }

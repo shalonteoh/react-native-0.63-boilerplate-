@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { LogBox } from 'react-native'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import createStore from 'App/Stores'
@@ -21,7 +22,7 @@ export default class App extends Component {
   }
 
   render() {
-    console.disableYellowBox = true;
+    LogBox.ignoreAllLogs();
     return (
       /**
        * @see https://github.com/reduxjs/react-redux/blob/master/docs/api/Provider.md
