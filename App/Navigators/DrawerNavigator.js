@@ -1,5 +1,4 @@
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import TabNavigator from './TabNavigator';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -7,7 +6,7 @@ import { Colors } from 'App/Theme';
 import SettingNavigator from './SettingNavigator';
 import AuthScreen from '../Containers/Auth/AuthScreen';
 
-const DrawerNavigator = createDrawerNavigator({
+export default createDrawerNavigator({
     Home: {
         screen: TabNavigator,
         navigationOptions: ({ navigation }) => ({
@@ -36,6 +35,3 @@ const DrawerNavigator = createDrawerNavigator({
         },
     }
 });
-
-
-export default createAppContainer(DrawerNavigator)

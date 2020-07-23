@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
-import { Helpers } from 'App/Theme';
+import { View, Text, Modal } from "react-native";
+import { Helpers, Metrics, Colors } from 'App/Theme';
 import styles from './indexStyle';
+import Icon from "react-native-vector-icons/FontAwesome";
 
 export default class AddScreen extends Component {
     render() {
         return (
-            <View style={[Helpers.fill, styles.container]}>
-                <View>
-                    <Text>This is add screen</Text>
-                </View>
+            <View style={[
+                Helpers.fill,
+                styles.container]}>
+                <Text>This is add screen</Text>
             </View>
         )
     }

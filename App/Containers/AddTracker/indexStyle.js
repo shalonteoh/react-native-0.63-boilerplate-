@@ -5,4 +5,7 @@ export default StyleSheet.create({
     container: {
         backgroundColor: Colors.primary,
     },
+    modal: {
+        backgroundColor: Colors.activeTint
+    }
 })
