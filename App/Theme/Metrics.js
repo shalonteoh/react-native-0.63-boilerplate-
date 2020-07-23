@@ -78,4 +78,10 @@ export default {
     tinyBorderRadius: {
         borderRadius: tiny,
     },
+    tinyBottomLeftBorderRadius: {
+        borderBottomLeftRadius: tiny,
+    },
+    tinyBottomRightBorderRadius: {
+        borderBottomRightRadius: tiny,
+    },
 }

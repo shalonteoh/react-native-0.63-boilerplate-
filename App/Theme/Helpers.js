@@ -22,6 +22,11 @@ export default StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
     },
+    colEnd: {
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+    },
     column: {
         flexDirection: 'column',
     },

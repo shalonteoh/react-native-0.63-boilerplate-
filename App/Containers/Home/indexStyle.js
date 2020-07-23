@@ -1,8 +1,27 @@
 import { StyleSheet } from 'react-native'
-import { Colors } from 'App/Theme'
+import { Colors, Metrics, Helpers, ApplicationStyles } from 'App/Theme'
 
 export default StyleSheet.create({
     container: {
         backgroundColor: Colors.primary,
     },
+    item: {
+        ...Metrics.smallVerticalMargin,
+        ...Metrics.tinyBorderRadius,
+        ...Metrics.horizontalMargin,
+        ...Metrics.verticalMargin,
+        backgroundColor: Colors.gray,
+        height: 150,
+    },
+    smallContainer: {
+        ...Metrics.horizontalMargin,
+        backgroundColor: Colors.gray,
+        borderBottomColor: Colors.darkGray,
+        borderBottomWidth: 1,
+    },
+    itemButtonContainer: {
+        ...Helpers.fillRowCross,
+        backgroundColor: Colors.white,
+        height: 50
+    }
 })
