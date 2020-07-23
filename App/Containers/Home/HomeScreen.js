@@ -4,7 +4,7 @@ import { Helpers, Metrics, Fonts, Colors } from 'App/Theme';
 import styles from './indexStyle';
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import CButton from "../../Components/SectionList";
+import CButton from "../../Components/Button";
 import Actions from 'App/Stores/TrackItem/Actions';
 class HomeScreen extends Component {
 
