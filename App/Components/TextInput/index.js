@@ -4,11 +4,12 @@ import { Fonts, Metrics, Helpers, ApplicationStyles } from 'App/Theme'
 import {
     Item,
     Input,
+    Icon
 } from 'native-base';
 import styles from './indexStyle'
 export default class CTextInput extends Component {
     render() {
-        const { title } = this.props;
+        const { title, onValueChange, error } = this.props;
         return (
             <View style={[
                 Helpers.row,
@@ -25,8 +26,12 @@ export default class CTextInput extends Component {
                         regular
                         style={[
                             Metrics.tinyBorderRadius,
-                        ]}>
-                        <Input />
+                        ]}
+                        error={error}>
+                        <Input
+                            onChangeText={onValueChange.bind(this)}
+                            clearButtonMode='while-editing'
+                        />
                     </Item>
                 </View>
             </View>

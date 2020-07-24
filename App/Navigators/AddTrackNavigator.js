@@ -12,7 +12,7 @@ export default createStackNavigator({
             title: '',
             headerLeft: (
                 <TouchableOpacity
-                    onPress={() =>
+                    onPress={() => navigation.state.params !== undefined && navigation.state.params.promptDiscard ?
                         Alert.alert(
                             'Discard changes?',
                             'You have unsaved changes. Are you sure to discard them and leave the screen?',
@@ -26,7 +26,7 @@ export default createStackNavigator({
                                     onPress: () => navigation.goBack(null),
                                 },
                             ]
-                        )
+                        ) : navigation.goBack(null)
                     }
                 >
                     <View style={[

@@ -17,4 +17,5 @@ export default {
     inactiveTint: 'gray',
     gray: '#e8e8e8',
     darkGray: '#d8d8d8',
+    red: 'red',
 }

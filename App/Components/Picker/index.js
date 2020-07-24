@@ -11,7 +11,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 export default class CPicker extends Component {
 
     render() {
-        const { title, items, placeholder, onValueChange, value } = this.props;
+        const { title, items, placeholder, onValueChange, value, error } = this.props;
         return (
             <View style={[
                 Helpers.row,
@@ -29,20 +29,25 @@ export default class CPicker extends Component {
                         regular
                         style={[
                             Metrics.tinyBorderRadius,
-                        ]}>
+                        ]}
+                        error={error}>
                         <Picker
                             mode="dropdown"
                             iosIcon={<Icon
                                 name="chevron-down"
                                 size={20}
-                                style={{ width: '10%' }} />}
+                                style={{
+                                    width: '10%',
+                                    color: error ? Colors.red : Colors.text,
+                                }}
+                            />}
                             style={[{
                                 height: 50,
                             }
                             ]}
                             placeholder={placeholder}
                             placeholderStyle={{
-                                color: Colors.darkGray,
+                                color: error ? Colors.red : Colors.darkGray,
                             }}
                             textStyle={{
                                 width: '90%'

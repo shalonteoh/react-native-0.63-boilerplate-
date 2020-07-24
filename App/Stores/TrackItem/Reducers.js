@@ -35,6 +35,13 @@ export const updateItemsSuccess = (state, { items }) => ({
     getItemsErrorMessage: null,
 })
 
+export const addItemSuccess = (state, { item }) => ({
+    ...state,
+    items: [...state.items, item],
+    getItemsLoading: false,
+    getItemsErrorMessage: null,
+})
+
 /**
  * @see https://github.com/infinitered/reduxsauce#createreducer
  */
@@ -44,4 +51,5 @@ export const reducer = createReducer(INITIAL_STATE, {
     [TrackItemTypes.GET_ITEMS_SUCCESS]: getItemsSuccess,
     [TrackItemTypes.GET_ITEMS_FAILURE]: getItemsFailure,
     [TrackItemTypes.UPDATE_ITEMS_SUCCESS]: updateItemsSuccess,
+    [TrackItemTypes.ADD_ITEM_SUCCESS]: addItemSuccess,
 })
