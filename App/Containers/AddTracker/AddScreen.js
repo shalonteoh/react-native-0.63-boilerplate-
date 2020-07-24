@@ -1,28 +1,23 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
-import { Helpers, Metrics, Colors, ApplicationStyles, Fonts } from 'App/Theme';
+import { Helpers, Metrics, Colors } from 'App/Theme';
 import styles from './indexStyle';
 import {
     Form,
-    Item,
-    Picker
 } from 'native-base';
 import CTextInput from "../../Components/TextInput";
 import CPicker from "../../Components/Picker";
+import BottomButton from "../../Components/BottomButton";
 
 const TYPES = [
     {
-        label: 'Increment',
+        label: 'Plus/Minus',
         value: 1
     },
     {
-        label: 'Decrement',
+        label: 'Average',
         value: 2
     },
-    {
-        label: 'Rate',
-        value: 3
-    }
 ]
 
 export default class AddScreen extends Component {
@@ -37,6 +32,10 @@ export default class AddScreen extends Component {
         this.setState({
             selected2: value
         });
+    }
+
+    onCreate() {
+        console.log('on create');
     }
     render() {
         return (
@@ -58,6 +57,12 @@ export default class AddScreen extends Component {
                         value={this.state.selected2}
                         onValueChange={this.onValueChange2.bind(this)} />
                 </Form>
+                <BottomButton
+                    itemId={null}
+                    onPress={this.onCreate}
+                    backgroundColor={Colors.activeTint}
+                    textColor={Colors.white}
+                    value="Create" />
             </View>
         )
     }

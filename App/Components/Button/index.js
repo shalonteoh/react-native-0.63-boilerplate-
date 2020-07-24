@@ -6,7 +6,17 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/FontAwesome';
 export default class CButton extends Component {
     render() {
-        const { content, value, backgroundColor, onPress, itemId, borderColor, blr, brr } = this.props;
+        const { content,
+            value,
+            backgroundColor,
+            onPress,
+            itemId,
+            borderColor,
+            blr,
+            brr,
+            width,
+            textColor,
+            height } = this.props;
         return (
             <TouchableOpacity
                 onPress={() => onPress(itemId)}
@@ -14,14 +24,19 @@ export default class CButton extends Component {
                     Helpers.center,
                     {
                         backgroundColor: backgroundColor,
-                        height: 50,
-                        width: 50,
+                        height: height || 50,
+                        width: width || '100%',
                         borderWidth: 1,
                         borderColor: borderColor || backgroundColor,
                         borderBottomLeftRadius: blr || 0,
                         borderBottomRightRadius: brr | 0,
                     },]}>
-                {content || <Text>{value}</Text>}
+                {content || <Text style={[
+                    Fonts.h5,
+                    {
+                        color: textColor || Colors.text
+                    }
+                ]}>{value}</Text>}
             </TouchableOpacity>
         )
     }

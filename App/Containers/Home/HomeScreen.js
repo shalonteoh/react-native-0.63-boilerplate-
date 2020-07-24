@@ -80,6 +80,7 @@ class HomeScreen extends Component {
                                             backgroundColor={Colors.white}
                                             borderColor={Colors.activeTint}
                                             blr={5}
+                                            width={50}
                                             content={(
                                                 <Icon name="minus" size={20} color={Colors.activeTint} />
                                             )}
@@ -89,6 +90,7 @@ class HomeScreen extends Component {
                                             onPress={this.onIncrement}
                                             backgroundColor={Colors.activeTint}
                                             brr={5}
+                                            width={50}
                                             content={(
                                                 <Icon name="plus" size={20} color={Colors.white} />
                                             )}

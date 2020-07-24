@@ -174,4 +174,8 @@ export default StyleSheet.create({
     textRight: {
         textAlign: 'right',
     },
+    absoluteBottom: {
+        position: 'absolute',
+        bottom: 0
+    }
 })
