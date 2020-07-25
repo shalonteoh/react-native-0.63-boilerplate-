@@ -6,6 +6,7 @@ import { getVersion, getBuildNumber } from 'react-native-device-info'
 import CSectionList from "App/Components/SectionList"
 import { connect } from 'react-redux'
 import Actions from 'App/Stores/Auth/Actions'
+import { getTimeZone } from "react-native-localize"
 
 const OTHER_SETTINGS = [
     {
@@ -14,6 +15,11 @@ const OTHER_SETTINGS = [
             {
                 title: "App Version",
                 data: `${getVersion()} (${getBuildNumber()})`,
+                type: 1
+            },
+            {
+                title: "Timezone",
+                data: getTimeZone(),
                 type: 1
             },
             {

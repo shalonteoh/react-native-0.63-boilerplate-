@@ -35,6 +35,7 @@ export default createBottomTabNavigator({
         }),
     }
 }, {
+    initialRouteName: 'History',
     defaultNavigationOptions: ({ navigation }) => ({
         tabBarOptions: {
             activeTintColor: Colors.activeTint,

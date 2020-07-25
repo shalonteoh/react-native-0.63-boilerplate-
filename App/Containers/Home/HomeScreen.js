@@ -90,7 +90,7 @@ class HomeScreen extends Component {
                                 </View>
                                 <View style={[
                                     Helpers.fillRowCross,
-                                    styles.smallContainer
+                                    styles.smallContainer,
                                 ]}>
                                     {item.data && (
                                         <View style={[
