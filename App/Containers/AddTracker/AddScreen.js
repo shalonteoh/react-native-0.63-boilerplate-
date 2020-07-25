@@ -17,8 +17,12 @@ const TYPES = [
         value: 1
     },
     {
-        label: 'Average',
+        label: 'Rate',
         value: 2
+    },
+    {
+        label: 'Timer',
+        value: 3
     },
 ]
 
