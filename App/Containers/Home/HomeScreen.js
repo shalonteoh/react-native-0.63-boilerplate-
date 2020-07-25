@@ -145,7 +145,7 @@ class HomeScreen extends Component {
                             </View>
                         )}
                         leftOpenValue={0}
-                        rightOpenValue={-75}
+                        rightOpenValue={-80}
                         onRowOpen={(rowKey, rowMap) => {
                             setTimeout(() => {
                                 rowMap[rowKey] && rowMap[rowKey].closeRow()
