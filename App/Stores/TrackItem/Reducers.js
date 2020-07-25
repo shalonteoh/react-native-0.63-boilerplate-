@@ -42,6 +42,11 @@ export const addItemSuccess = (state, { item }) => ({
     getItemsErrorMessage: null,
 })
 
+export const removeItemSuccess = (state, { id }) => ({
+    ...state,
+    items: state.items.filter(item => item.id !== id)
+})
+
 /**
  * @see https://github.com/infinitered/reduxsauce#createreducer
  */
@@ -52,4 +57,5 @@ export const reducer = createReducer(INITIAL_STATE, {
     [TrackItemTypes.GET_ITEMS_FAILURE]: getItemsFailure,
     [TrackItemTypes.UPDATE_ITEMS_SUCCESS]: updateItemsSuccess,
     [TrackItemTypes.ADD_ITEM_SUCCESS]: addItemSuccess,
+    [TrackItemTypes.REMOVE_ITEM_SUCCESS]: removeItemSuccess,
 })

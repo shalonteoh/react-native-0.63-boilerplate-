@@ -27,3 +27,11 @@ export function* addItem({ item }) {
     });
     NavigationService.navigate('Home')
 }
+
+export function* removeItem({ id }) {
+    console.log(id);
+    yield put({
+        type: TrackItemTypes.REMOVE_ITEM_SUCCESS,
+        id
+    });
+}

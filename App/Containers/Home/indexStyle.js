@@ -23,5 +23,21 @@ export default StyleSheet.create({
         ...Helpers.fillRowCross,
         backgroundColor: Colors.white,
         height: 50
+    },
+    rowBack: {
+        ...Metrics.smallVerticalMargin,
+        ...Metrics.horizontalMargin,
+        ...Metrics.verticalMargin,
+        ...Helpers.fillRow,
+        ...Helpers.crossStart,
+        ...Helpers.mainEnd,
+    },
+    backButton: {
+        ...Metrics.tinyTopRightBorderRadius,
+        ...Metrics.tinyBottomRightBorderRadius,
+        ...Helpers.center,
+        backgroundColor: Colors.red,
+        height: 100,
+        width: 75,
     }
 })

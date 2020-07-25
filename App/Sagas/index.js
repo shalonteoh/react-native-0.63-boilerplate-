@@ -4,7 +4,7 @@ import { StartupTypes } from 'App/Stores/Startup/Actions'
 import { startup } from './StartupSaga'
 import { storeUser, removeUser } from "./AuthSaga"
 import { TrackItemTypes } from 'App/Stores/TrackItem/Actions'
-import { updateItems, addItem } from "./TrackItemSaga"
+import { updateItems, addItem, removeItem } from "./TrackItemSaga"
 export default function* root() {
     yield all([
         /**
@@ -17,5 +17,6 @@ export default function* root() {
         takeEvery(AuthTypes.REMOVE_USER, removeUser),
         takeEvery(TrackItemTypes.UPDATE_ITEMS, updateItems),
         takeEvery(TrackItemTypes.ADD_ITEM, addItem),
+        takeEvery(TrackItemTypes.REMOVE_ITEM, removeItem),
     ])
 }

@@ -1,13 +1,20 @@
 import React, { Component } from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { Helpers, Metrics, Fonts, Colors } from 'App/Theme';
 import styles from './indexStyle';
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CButton from "../../Components/Button";
 import Actions from 'App/Stores/TrackItem/Actions';
+import { SwipeListView } from 'react-native-swipe-list-view';
 class HomeScreen extends Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            page: 1,
+            isRefreshing: false,
+        }
+    }
     onIncrement = (id) => {
         const { items, updateItems } = this.props;
         const index = items.findIndex(element => element.id == id);
@@ -34,6 +41,11 @@ class HomeScreen extends Component {
         };
         updateItems(newArray);
     }
+
+    onDeleteItem = (rowData) => {
+        this.props.removeItem(rowData.id);
+    }
+
     render() {
         const { items } = this.props;
         return (
@@ -42,7 +54,7 @@ class HomeScreen extends Component {
                     Metrics.verticalMargin,
                     Helpers.fill,
                 ]}>
-                    <FlatList
+                    <SwipeListView
                         data={items}
                         renderItem={({ item }) => (
                             <View style={[
@@ -100,6 +112,23 @@ class HomeScreen extends Component {
                             </View>
                         )}
                         keyExtractor={item => item.id}
+                        renderHiddenItem={(rowData, rowMap) => (
+                            <View style={styles.rowBack}>
+                                <TouchableOpacity
+                                    onPress={() => this.onDeleteItem(rowData.item)}
+                                    style={[styles.backButton]}
+                                >
+                                    <Icon name="trash" size={30} color={Colors.white} />
+                                </TouchableOpacity>
+                            </View>
+                        )}
+                        leftOpenValue={0}
+                        rightOpenValue={-75}
+                        onRowOpen={(rowKey, rowMap) => {
+                            setTimeout(() => {
+                                rowMap[rowKey] && rowMap[rowKey].closeRow()
+                            }, 2000)
+                        }}
                     />
                 </View>
             </View>
@@ -114,6 +143,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     updateItems: (items) => dispatch(Actions.updateItems(items)),
+    removeItem: (id) => dispatch(Actions.removeItem(id)),
 })
 
 export default connect(

@@ -33,6 +33,8 @@ const { Types, Creators } = createActions({
     updateItemsSuccess: ['items'],
     addItem: ['item'],
     addItemSuccess: ['item'],
+    removeItem: ['id'],
+    removeItemSuccess: ['id'],
 })
 
 export const TrackItemTypes = Types
