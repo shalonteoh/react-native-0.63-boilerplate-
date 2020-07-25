@@ -15,13 +15,13 @@ export default createStackNavigator({
                     timing: 0,
                 },
             }),
-            headerLeft: (
+            headerLeft: () => (
                 <TouchableOpacity
                     onPress={navigation.toggleDrawer}
                     style={{ paddingLeft: 10 }}
                 >
                     <Icon name="bars" size={20} color="#000" />
-                </TouchableOpacity>)
+                </TouchableOpacity>),
         }),
     },
 }, {

@@ -68,7 +68,7 @@ class HomeScreen extends Component {
     };
 
     render() {
-        const { items } = this.props;
+        const { items, navigation } = this.props;
         const { isRefreshing, loading } = this.state;
         return (
             <View style={[Helpers.fill, styles.container]}>
@@ -79,59 +79,62 @@ class HomeScreen extends Component {
                     <SwipeListView
                         data={items}
                         renderItem={({ item }) => (
-                            <View style={[
-                                styles.item
-                            ]}>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("History")}>
                                 <View style={[
-                                    Helpers.fillRowCross,
-                                    styles.smallContainer
-                                ]}>
-                                    <Text style={[Fonts.normal]}>{item.title}</Text>
-                                </View>
-                                <View style={[
-                                    Helpers.fillRowCross,
-                                    styles.smallContainer,
-                                ]}>
-                                    {item.data && (
-                                        <View style={[
-                                            Helpers.fillRow,
-                                            Helpers.mainSpaceBetween
-                                        ]}>
-                                            <Text style={[Fonts.normal]}>{item.data.date}</Text>
-                                            <Text style={[Fonts.normal]}>{item.data.value}</Text>
-                                        </View>)}
-                                </View>
-                                <View style={[
-                                    styles.itemButtonContainer
+                                    styles.item
                                 ]}>
                                     <View style={[
-                                        Helpers.fillRow,
-                                        Helpers.mainEnd,
+                                        Helpers.fillRowCross,
+                                        styles.smallContainer
                                     ]}>
-                                        <CButton
-                                            itemId={item.id}
-                                            onPress={this.onDecrement}
-                                            backgroundColor={Colors.white}
-                                            borderColor={Colors.activeTint}
-                                            blr={5}
-                                            width={50}
-                                            content={(
-                                                <Icon name="minus" size={20} color={Colors.activeTint} />
-                                            )}
-                                            value="-" />
-                                        <CButton
-                                            itemId={item.id}
-                                            onPress={this.onIncrement}
-                                            backgroundColor={Colors.activeTint}
-                                            brr={5}
-                                            width={50}
-                                            content={(
-                                                <Icon name="plus" size={20} color={Colors.white} />
-                                            )}
-                                            value="+" />
+                                        <Text style={[Fonts.normal]}>{item.title}</Text>
+                                    </View>
+                                    <View style={[
+                                        Helpers.fillRowCross,
+                                        styles.smallContainer,
+                                    ]}>
+                                        {item.data && (
+                                            <View style={[
+                                                Helpers.fillRow,
+                                                Helpers.mainSpaceBetween
+                                            ]}>
+                                                <Text style={[Fonts.normal]}>{item.data.date}</Text>
+                                                <Text style={[Fonts.normal]}>{item.data.value}</Text>
+                                            </View>)}
+                                    </View>
+                                    <View style={[
+                                        styles.itemButtonContainer
+                                    ]}>
+                                        <View style={[
+                                            Helpers.fillRow,
+                                            Helpers.mainEnd,
+                                        ]}>
+                                            <CButton
+                                                itemId={item.id}
+                                                onPress={this.onDecrement}
+                                                backgroundColor={Colors.white}
+                                                borderColor={Colors.activeTint}
+                                                blr={5}
+                                                width={50}
+                                                content={(
+                                                    <Icon name="minus" size={20} color={Colors.activeTint} />
+                                                )}
+                                                value="-" />
+                                            <CButton
+                                                itemId={item.id}
+                                                onPress={this.onIncrement}
+                                                backgroundColor={Colors.activeTint}
+                                                brr={5}
+                                                width={50}
+                                                content={(
+                                                    <Icon name="plus" size={20} color={Colors.white} />
+                                                )}
+                                                value="+" />
+                                        </View>
                                     </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         )}
                         keyExtractor={item => item.id}
                         renderHiddenItem={(rowData, rowMap) => (

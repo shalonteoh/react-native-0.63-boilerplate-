@@ -29,4 +29,34 @@ export default StyleSheet.create({
         backgroundColor: Colors.red,
         borderRadius: 5
     },
+    subText: {
+        ...Fonts.normal,
+        color: Colors.veryDarkGray
+    },
+    selectContainer: {
+        ...Metrics.topMargin,
+        ...Metrics.bottomMargin,
+        ...Metrics.borderRadius,
+        ...Metrics.horizontalPadding,
+        ...Helpers.rowCross,
+        ...Helpers.mainSpaceBetween,
+        height: 50,
+        backgroundColor: Colors.gray,
+    },
+    modalContainer: {
+        justifyContent: 'flex-end',
+        margin: 0,
+    },
+    modalView: {
+        ...Metrics.borderRadius,
+        height: 500,
+        backgroundColor: Colors.white,
+    },
+    item: {
+        ...Metrics.tinyVerticalMargin,
+        ...Helpers.mainCenter,
+        height: 50,
+        borderBottomWidth: 1,
+        borderBottomColor: Colors.gray,
+    },
 })

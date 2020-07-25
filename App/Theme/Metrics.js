@@ -12,6 +12,9 @@ export default {
     tinyTopMargin: {
         marginTop: tiny,
     },
+    topMargin: {
+        marginTop: normal,
+    },
     tinyBottomMargin: {
         marginBottom: tiny,
     },
@@ -89,6 +92,9 @@ export default {
     },
     tinyTopRightBorderRadius: {
         borderTopRightRadius: tiny,
+    },
+    borderRadius: {
+        borderRadius: normal,
     },
     smallLeftMargin: {
         paddingLeft: small

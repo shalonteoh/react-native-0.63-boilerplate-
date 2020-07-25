@@ -15,18 +15,23 @@ const size = {
 export default StyleSheet.create({
     h1: {
         fontSize: size.h1,
+        fontWeight: '700',
     },
     h2: {
         fontSize: size.h2,
+        fontWeight: '700',
     },
     h3: {
         fontSize: size.h3,
+        fontWeight: '700',
     },
     h4: {
         fontSize: size.h4,
+        fontWeight: '700',
     },
     h5: {
         fontSize: size.h5,
+        fontWeight: '700',
     },
     normal: {
         fontSize: size.regular,

@@ -20,7 +20,7 @@ const RootStackNavigator = createStackNavigator({
         navigationOptions: ({ navigation }) => ({
             animationEnabled: true,
         })
-    },
+    }
 }, {
     initialRouteName: 'Drawer',
     headerMode: 'none',

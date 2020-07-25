@@ -10,7 +10,7 @@ export default createStackNavigator({
         screen: AddScreen,
         navigationOptions: ({ navigation }) => ({
             title: '',
-            headerLeft: (
+            headerLeft: () => (
                 <TouchableOpacity
                     onPress={() => navigation.state.params !== undefined && navigation.state.params.promptDiscard ?
                         Alert.alert(

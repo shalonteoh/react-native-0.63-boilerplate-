@@ -16,7 +16,7 @@ export default createStackNavigator({
                     timing: 0,
                 },
             }),
-            headerLeft: (
+            headerLeft: () => (
                 <TouchableOpacity
                     onPress={navigation.toggleDrawer}
                     style={{ paddingLeft: 10 }}

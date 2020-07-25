@@ -18,4 +18,6 @@ export default {
     gray: '#e8e8e8',
     darkGray: '#d8d8d8',
     red: 'red',
+    veryDarkGray: '#a9a9a9',
+    black: 'black',
 }
