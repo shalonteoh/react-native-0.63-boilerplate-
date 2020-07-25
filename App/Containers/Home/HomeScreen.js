@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, RefreshControl, ActivityIndicator } from "react-native";
 import { Helpers, Metrics, Fonts, Colors } from 'App/Theme';
 import styles from './indexStyle';
 import { connect } from 'react-redux'
@@ -13,6 +13,7 @@ class HomeScreen extends Component {
         this.state = {
             page: 1,
             isRefreshing: false,
+            loadMore: false,
         }
     }
     onIncrement = (id) => {
@@ -46,8 +47,29 @@ class HomeScreen extends Component {
         this.props.removeItem(rowData.id);
     }
 
+    onRefresh() {
+        this.setState({
+            isRefreshing: true
+        }, () => setTimeout(() => {
+            this.setState({
+                isRefreshing: false
+            })
+        }, 2000));
+    }
+
+    handleLoadMore = () => {
+        this.setState({
+            loading: true,
+        }, () => setTimeout(() => {
+            this.setState({
+                loading: false
+            })
+        }, 2000));
+    };
+
     render() {
         const { items } = this.props;
+        const { isRefreshing, loading } = this.state;
         return (
             <View style={[Helpers.fill, styles.container]}>
                 <View style={[
@@ -129,7 +151,23 @@ class HomeScreen extends Component {
                                 rowMap[rowKey] && rowMap[rowKey].closeRow()
                             }, 2000)
                         }}
+                        refreshControl={
+                            <RefreshControl
+                                refreshing={isRefreshing}
+                                onRefresh={this.onRefresh.bind(this)}
+                            />
+                        }
+                    // onEndReachedThreshold={0.4}
+                    // onEndReached={this.handleLoadMore.bind(this)}
                     />
+                    {loading && (
+                        <View style={{
+                            width: '100%',
+                            height: '100%'
+                        }}>
+                            <ActivityIndicator style={{ color: '#000' }} />
+                        </View>)
+                    }
                 </View>
             </View>
         )
