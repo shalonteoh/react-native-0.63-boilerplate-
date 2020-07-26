@@ -67,6 +67,11 @@ class HomeScreen extends Component {
         }, 2000));
     };
 
+    onItemPressed = (index) => {
+        const { navigation } = this.props;
+        navigation.navigate("HistoryScreen", { selectedTracker: index })
+    }
+
     render() {
         const { items, navigation } = this.props;
         const { isRefreshing, loading } = this.state;
@@ -78,9 +83,9 @@ class HomeScreen extends Component {
                 ]}>
                     <SwipeListView
                         data={items}
-                        renderItem={({ item }) => (
+                        renderItem={({ item, index }) => (
                             <TouchableOpacity
-                                onPress={() => navigation.navigate("History")}>
+                                onPress={() => this.onItemPressed(index)}>
                                 <View style={[
                                     styles.item
                                 ]}>

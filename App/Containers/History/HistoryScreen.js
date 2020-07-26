@@ -9,6 +9,7 @@ import LineChartWithTooltips from "../../Components/ChartToolTip";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Modal from 'react-native-modal';
 import { connect } from 'react-redux';
+import { withNavigationFocus } from 'react-navigation';
 class HistoryScreen extends Component {
     constructor(props) {
         super(props);
@@ -22,6 +23,17 @@ class HistoryScreen extends Component {
     componentDidMount() {
         // Get last 7 days
         this.getLast7Days();
+    }
+
+    componentDidUpdate(prevProps) {
+        const { navigation } = this.props;
+        if (navigation.state.params !== undefined &&
+            navigation.state.params.selectedTracker !== undefined &&
+            this.state.selectedTracker !== navigation.state.params.selectedTracker) {
+            this.setState({
+                selectedTracker: navigation.state.params.selectedTracker
+            });
+        }
     }
 
     getLast7Days = () => {
@@ -59,6 +71,8 @@ class HistoryScreen extends Component {
     }
 
     onChangeSelect = (index) => {
+        const { setParams } = this.props.navigation;
+        setParams({ selectedTracker: undefined });
         this.setState({
             selectedTracker: index,
             modalVisible: false
@@ -189,7 +203,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
 })
 
-export default connect(
+export default withNavigationFocus(connect(
     mapStateToProps,
     mapDispatchToProps
-)(HistoryScreen)
+)(HistoryScreen))
